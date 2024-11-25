@@ -22,8 +22,8 @@ API documentation can be found at ```doc```
 Try it with the following credentials
 
 - username
-- user — has the role user.
-- admin — has the role admin.
+\- user — has the role user.
+\- admin — has the role admin.
 
 - password  
 - password for both users.
