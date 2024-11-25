@@ -5,7 +5,7 @@ EMS is an Employee Managment System served as a RESTful API.
 This application enables CRUD operations over employees' information (such as name, salary, position, department, etc.) through a secure RESTful API. The application is designed to ensure that only authenticated users can interact with the API, requiring a JSON Web Token (JWT) for each request.
 
 ## API Usage
-API documentation can be found at ```doc```
+API documentation can be found at ```/doc```
 
 ---
 ### Roles and Authorizations
@@ -28,7 +28,7 @@ Try it with the following credentials
 - password    
 \- "password" for both users.
 
-at ```swagger-uiindex.html#Authenticationlogin```
+at ```/swagger-ui/index.html#/Authentication/login```
 
 ## Technologies
 The following technologies and libraries are used in developing the system
