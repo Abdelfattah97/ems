@@ -4,6 +4,20 @@ EMS is an Employee Managment System served as a RESTful API.
 ### Project Description
 This application enables CRUD operations over employees' information (such as name, salary, position, department, etc.) through a secure RESTful API. The application is designed to ensure that only authenticated users can interact with the API, requiring a JSON Web Token (JWT) for each request.
 
+## Features
+
+- **CRUD Operations**: Manage departments and employees with ease.
+  - **Department Management**:
+    - Add new departments.
+    - Update existing departments.
+    - Find departments by their ID.
+    - Fetch a paginated list of department records.
+  - **Employee Management**:
+    - Add new employees.
+    - Update existing employees.
+    - Find employees by their ID.
+    - Fetch a paginated list of employee records.
+
 ## API Usage
 API documentation can be found at ```/doc```
 
