@@ -30,7 +30,6 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	public ResponseEntity<ArgumentTypeMismatchMessage> resourceNotFoundHandler(MethodArgumentTypeMismatchException ex) {
 		ArgumentTypeMismatchMessage argMsg = new ArgumentTypeMismatchMessage();
 		argMsg.setField(ex.getName());
@@ -65,13 +64,11 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(value = AccessDeniedException.class)
-	@ResponseStatus(code = HttpStatus.FORBIDDEN)
 	public ResponseEntity<String> handleBadCredentialsException(AccessDeniedException ex) {
 		return ResponseEntity.status(HttpStatus.FORBIDDEN).header("message", ex.getMessage()).body(ex.getMessage());
 	}
 
 	@ExceptionHandler(value = AuthenticationException.class)
-	@ResponseStatus(code = HttpStatus.UNAUTHORIZED)
 	public ResponseEntity<String> handleBadCredentialsException(AuthenticationException ex) {
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("message", ex.getMessage()).body(ex.getMessage());
 	}

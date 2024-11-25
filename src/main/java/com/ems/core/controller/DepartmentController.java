@@ -55,7 +55,7 @@ public class DepartmentController {
 	@Operation(summary = "fetches department by its id", responses = {
 			@ApiResponse(responseCode = "200", description = "Successful operation"),
 			@ApiResponse(responseCode = "401", description = "Invalid Bearer Token!"),
-			@ApiResponse(responseCode = "404", description = "no department found"),
+			@ApiResponse(responseCode = "404", description = "No department found"),
 			@ApiResponse(responseCode = "403", description = "Don't have permission to access this resource")
 	})
 	public Department findById( @PathVariable Long deptId) {
@@ -78,7 +78,7 @@ public class DepartmentController {
 			@ApiResponse(responseCode = "200", description = "Successful operation"),
 			@ApiResponse(responseCode = "400", description = "Bad Request"),
 			@ApiResponse(responseCode = "401", description = "Invalid Bearer Token!"),
-			@ApiResponse(responseCode = "404", description = "no department found"),
+			@ApiResponse(responseCode = "404", description = "No department found"),
 			@ApiResponse(responseCode = "403", description = "Don't have permission to access this resource")
 	})
 	public DepartmentDto update(@Valid @RequestBody DepartmentDto dept) {

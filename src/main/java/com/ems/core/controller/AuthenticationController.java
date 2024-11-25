@@ -29,10 +29,10 @@ public class AuthenticationController {
 	private JwtService jwtService;
 	
 	@PostMapping("/login")
-	@Operation(summary = "updates existing department by its id", responses = {
+	@Operation(summary = "Generate a token using Username and Password", responses = {
 			@ApiResponse(responseCode = "200", description = "Successful operation"),
 			@ApiResponse(responseCode = "400", description = "Bad request"),
-			@ApiResponse(responseCode = "403", description = "Don't have permission to access this resource")
+			@ApiResponse(responseCode = "401", description = "Bad Credentials")
 	})
 	public ResponseEntity<String> login(@Valid @RequestBody AuthenticationRequest request){
 		
