@@ -24,7 +24,7 @@ import com.ems.core.security.filter.JwtAuthenticationFilter;
 public class SecurityConfig {
 
 	@Autowired
-	private JwtAuthenticationFilter jwtAuthenticationFilter;
+	private JwtAuthenticationFilter authenticationFilter;
 
 	@Value("JWT_SECRET")
 	private String secret;
@@ -44,18 +44,20 @@ public class SecurityConfig {
 				.requestMatchers(HttpMethod.PUT, "/api/**").hasRole("admin").requestMatchers(HttpMethod.POST, "/api/**")
 				.hasRole("admin").requestMatchers(HttpMethod.DELETE, "/api/**").hasRole("admin")
 				.requestMatchers("/auth/login").permitAll()
+				.requestMatchers("/doc").permitAll()
+				.requestMatchers("/v3/api-docs/**").permitAll()
+				.requestMatchers("/swagger-ui/**").permitAll()
 				.requestMatchers("/error").permitAll().anyRequest().authenticated()
-
 		);
 		
 		http.httpBasic(basic->basic.disable());
 		
 		http.authenticationProvider(authenticationProvider());
 
-		http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+		http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
 		http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-
+		
 		return http.build();
 
 	}
@@ -73,6 +75,7 @@ public class SecurityConfig {
 	        return authProvider;
 	    }
 
+	 
 	
 
 }

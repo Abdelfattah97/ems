@@ -8,6 +8,8 @@ import java.lang.annotation.Target;
 
 import com.ems.core.validation.validator.MultiWordValidator;
 
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import jakarta.validation.constraints.NotBlank;
@@ -19,6 +21,7 @@ import jakarta.validation.constraints.NotBlank;
 @Constraint(validatedBy = MultiWordValidator.class)
 @NotBlank
 @Target(ElementType.FIELD)
+@Parameter(description = "One or more alphabetic word")
 public @interface MultiWord {
 
 	String message() default "This field should only contain one or more alphabetic words!";

@@ -8,6 +8,8 @@ import java.lang.annotation.Target;
 
 import com.ems.core.validation.validator.SingleWordValidator;
 
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import jakarta.validation.constraints.NotBlank;
@@ -19,6 +21,7 @@ import jakarta.validation.constraints.NotBlank;
 @Constraint(validatedBy = SingleWordValidator.class)
 @NotBlank(message = "This field should not be empty!")
 @Target(ElementType.FIELD)
+@Parameter(description = "One alphabetic word")
 public @interface SingleWord {
 
 	String message() default "This Field Should Contain One Alphabetic Word!";

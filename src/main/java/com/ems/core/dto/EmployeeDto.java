@@ -6,31 +6,28 @@ import com.ems.core.validation.annotation.SingleWord;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Data
 public class EmployeeDto {
 
 	private Long empId;
 
-	@NotNull(message = "Employee's first name is required!")
+	@NotBlank(message = "Employee's first name is required!")
 	@SingleWord
 	private String firstName;
 
-	@NotNull(message = "Employee's last name is required!")
+	@NotBlank(message = "Employee's last name is required!")
 	@SingleWord
 	private String lastName;
 
 	@Email(message = "Provided Email is not valid!")
-	@NotNull(message = "Employee's email is required!")
+	@NotBlank(message = "Employee's email is required!")
 	private String email;
 
-	@NotNull(message = "Employee's position is required!")
+	@NotBlank(message = "Employee's position is required!")
 	@MultiWord(message = "Position should only contain one or more alphabetic words!")
 	private String position;
 
@@ -41,7 +38,7 @@ public class EmployeeDto {
 
 	@NotNull(message = "The Employee's Department Id is mandatory!")
 	private Long deptId;
-	
+
 	private String deptName;
 
 }
