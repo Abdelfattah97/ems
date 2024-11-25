@@ -65,4 +65,4 @@ mvnw clean package
 docker-compose up --build
 ```
 4. Access the application
-Application [httplocalhost8080](http://localhost:8080/doc)
+Application [http://localhost:8080/doc](http://localhost:8080/doc)
