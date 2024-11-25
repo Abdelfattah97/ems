@@ -21,12 +21,12 @@ API documentation can be found at ```doc```
 
 Try it with the following credentials
 
-- username
-\- user — has the role user.
-\- admin — has the role admin.
+- username  
+\- "user" — has the role user.  
+\- "admin" — has the role admin.
 
-- password  
-- password for both users.
+- password    
+\- "password" for both users.
 
 at ```swagger-uiindex.html#Authenticationlogin```
 
